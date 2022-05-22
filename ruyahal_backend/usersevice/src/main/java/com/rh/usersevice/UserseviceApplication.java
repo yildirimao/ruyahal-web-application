@@ -1,13 +1,13 @@
-package com.rh;
+package com.rh.usersevice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RuyahalApplication {
+public class UserseviceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RuyahalApplication.class, args);
+		SpringApplication.run(UserseviceApplication.class, args);
 	}
 
 }
