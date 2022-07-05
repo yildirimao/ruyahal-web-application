@@ -20,7 +20,7 @@ public class InterpreterController {
         this.interpreterDao = interpreterDao;
     }
 
-    @RequestMapping(path = "/interpreters", method = RequestMethod.GET)
+    @RequestMapping(path = "/interpreter", method = RequestMethod.GET)
     public List<Interpreter> listAllInterpreters() {return interpreterDao.listAll();}
 
 
