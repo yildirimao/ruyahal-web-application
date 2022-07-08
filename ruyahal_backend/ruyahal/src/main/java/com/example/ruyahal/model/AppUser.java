@@ -18,16 +18,15 @@ public class AppUser {
     private String email;
     private boolean enabled;
 
-    public AppUser(int userId, String name, String lastname, int age, String gender, String sexualOrientation, String occupation, String maritalStatus, String zodiacSign, String religion, String email, boolean enabled) {
+    public AppUser(int userId, String name, String lastname, String dateOfBirth, String gender, String sexualOrientation, String occupation, String maritalStatus, String religion, String email, boolean enabled) {
         this.userId = userId;
         this.name = name;
         this.lastname = lastname;
-        this.age = age;
+        this.dateOfBirth = dateOfBirth;
         this.gender = gender;
         this.sexualOrientation = sexualOrientation;
         this.occupation = occupation;
         this.maritalStatus = maritalStatus;
-        this.zodiacSign = zodiacSign;
         this.religion = religion;
         this.email = email;
         this.enabled = enabled;
@@ -100,14 +99,6 @@ public class AppUser {
         this.maritalStatus = maritalStatus;
     }
 
-    public String getZodiacSign() {
-        return zodiacSign;
-    }
-
-    public void setZodiacSign(String zodiacSign) {
-        this.zodiacSign = zodiacSign;
-    }
-
     public String getReligion() {
         return religion;
     }
@@ -140,7 +131,7 @@ public class AppUser {
         return userId == appUser.userId &&
                 Objects.equals(name, appUser.name) &&
                 Objects.equals(lastname, appUser.lastname) &&
-                Objects.equals(age, appUser.age) &&
+                Objects.equals(dateOfBirth, appUser.dateOfBirth) &&
                 Objects.equals(gender, appUser.gender) &&
                 Objects.equals(sexualOrientation, appUser.sexualOrientation) &&
                 Objects.equals(occupation, appUser.occupation) &&
@@ -157,7 +148,7 @@ public class AppUser {
                 "userId=" + userId +
                 ", name='" + name + '\'' +
                 ", lastname='" + lastname + '\'' +
-                ", age=" + age +
+                ", dateOfBirth=" + dateOfBirth +
                 ", gender='" + gender + '\'' +
                 ", sexualOrientation='" + sexualOrientation + '\'' +
                 ", occupation='" + occupation + '\'' +

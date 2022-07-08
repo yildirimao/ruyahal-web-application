@@ -13,12 +13,11 @@ export default {
                 userId: -1,
                 name: "",
                 lastname: "",
-                age: -1,
+                dateOfBirth: "",
                 gender: "",
                 sexualOrientation: "",
                 occupation: "",
                 maritalStatus: "",
-                zodiacSign:
                 religion: "",
                 email: "",
                 enabled: false

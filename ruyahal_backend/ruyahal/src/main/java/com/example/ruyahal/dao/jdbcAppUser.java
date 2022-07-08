@@ -33,12 +33,12 @@ public class jdbcAppUser implements AppUserDao {
 
 
     @Override
-    public void createAppUser(int id, String name, String lastName, String dateOfBirth, String gender, String sexualOrientation, String occupation, String maritalStatus, String zodiacSign, String religion, String email) {
+    public void createAppUser(int id, String name, String lastName, String dateOfBirth, String gender, String sexualOrientation, String occupation, String maritalStatus, String religion, String email) {
 
-        String sql = "INSERT INTO users(user_id, user_name,  user_lastname, user_age, gender, sexual_orientation, user_occupation, marital_status, zodiac_sign, religion, email) " +
+        String sql = "INSERT INTO users(user_id, user_name,  user_lastname, date_of_birth, gender, sexual_orientation, user_occupation, marital_status, religion, email) " +
                 "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?) " +
-                "RETURNING user_name,  user_lastname, user_age, gender, sexual_orientation, user_occupation, marital_status, zodiac_sign, religion, email";
-        jdbctemplate.queryForObject(sql, int.class, name, lastName, age, gender, sexualOrientation, occupation, maritalStatus, zodiacSign, religion, email);
+                "RETURNING user_name,  user_lastname, date_of_birth, gender, sexual_orientation, user_occupation, marital_status, religion, email";
+        jdbctemplate.queryForObject(sql, int.class, name, lastName, dateOfBirth, gender, sexualOrientation, occupation, maritalStatus, religion, email);
 
 
     }
@@ -63,7 +63,6 @@ public class jdbcAppUser implements AppUserDao {
         appUser.setSexualOrientation(rs.getString("sexual_orientation"));
         appUser.setOccupation(rs.getString("user_occupation"));
         appUser.setMaritalStatus(rs.getString("marital_status"));
-        appUser.setZodiacSign(rs.getString("zodiac_sign"));
         appUser.setReligion(rs.getString("religion"));
         appUser.setEmail(rs.getString("email"));
         appUser.setEnabled(rs.getBoolean("enabled"));
