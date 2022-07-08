@@ -18,7 +18,9 @@ public class AppUser {
     private String email;
     private boolean enabled;
 
-    public AppUser(int userId, String name, String lastname, String dateOfBirth, String gender, String sexualOrientation, String occupation, String maritalStatus, String religion, String email, boolean enabled) {
+    private String dream;
+
+    public AppUser(int userId, String name, String lastname, String dateOfBirth, String gender, String sexualOrientation, String occupation, String maritalStatus, String religion, String email, boolean enabled, String dream) {
         this.userId = userId;
         this.name = name;
         this.lastname = lastname;
@@ -30,6 +32,7 @@ public class AppUser {
         this.religion = religion;
         this.email = email;
         this.enabled = enabled;
+        this.dream = dream;
     }
 
     public AppUser() {
@@ -123,6 +126,8 @@ public class AppUser {
         this.enabled = enabled;
     }
 
+    public String getDream(){return dream;}
+    public void setDream(String dream){this.dream = dream;}
     @Override
     public boolean equals(Object obj) {
         if(this == obj) return true;
@@ -136,10 +141,10 @@ public class AppUser {
                 Objects.equals(sexualOrientation, appUser.sexualOrientation) &&
                 Objects.equals(occupation, appUser.occupation) &&
                 Objects.equals(maritalStatus, appUser.maritalStatus) &&
-                Objects.equals(zodiacSign, appUser.zodiacSign) &&
                 Objects.equals(religion, appUser.religion) &&
                 Objects.equals(email, appUser.email) &&
-                Objects.equals(enabled, appUser.enabled);
+                Objects.equals(enabled, appUser.enabled) &&
+                Objects.equals(dream, appUser.dream);
     }
 
     @Override
@@ -153,10 +158,10 @@ public class AppUser {
                 ", sexualOrientation='" + sexualOrientation + '\'' +
                 ", occupation='" + occupation + '\'' +
                 ", maritalStatus='" + maritalStatus + '\'' +
-                ", zodiacSign='" + zodiacSign + '\'' +
                 ", religion='" + religion + '\'' +
                 ", email='" + email + '\'' +
-                ", enabled=" + enabled +
+                ", enabled=" + enabled + '\'' +
+                ", dream=" + dream +
                 '}';
     }
 }

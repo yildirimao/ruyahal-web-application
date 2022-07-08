@@ -33,20 +33,21 @@ public class jdbcAppUser implements AppUserDao {
 
 
     @Override
-    public void createAppUser(int id, String name, String lastName, String dateOfBirth, String gender, String sexualOrientation, String occupation, String maritalStatus, String religion, String email) {
+    public void createAppUser(int id, String name, String lastName, String dateOfBirth, String gender, String sexualOrientation, String occupation, String maritalStatus, String religion, String email, String dream) {
 
-        String sql = "INSERT INTO users(user_id, user_name,  user_lastname, date_of_birth, gender, sexual_orientation, user_occupation, marital_status, religion, email) " +
+        String sql = "INSERT INTO users(user_name,  user_lastname, date_of_birth, gender, sexual_orientation, user_occupation, marital_status, religion, email, dream) " +
                 "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?) " +
                 "RETURNING user_name,  user_lastname, date_of_birth, gender, sexual_orientation, user_occupation, marital_status, religion, email";
-        jdbctemplate.queryForObject(sql, int.class, name, lastName, dateOfBirth, gender, sexualOrientation, occupation, maritalStatus, religion, email);
+        jdbctemplate.queryForObject(sql, int.class, name, lastName, dateOfBirth, gender, sexualOrientation, occupation, maritalStatus, religion, email, dream);
 
 
     }
 
     @Override
-    public void updateAppUser(int userId, String name, String lastname, int age, String gender, String sexualOrientation, String occupation, String maritalStatus, String zodiacSign, String religion, String email, boolean enabled) {
+    public void updateAppUser(String name, String lastname, String date_of_birth, String gender, String sexualOrientation, String occupation, String maritalStatus, String religion, String email, boolean enabled, String dream) {
 
     }
+
 
     @Override
     public void deleteAppUser(AppUser user) {
