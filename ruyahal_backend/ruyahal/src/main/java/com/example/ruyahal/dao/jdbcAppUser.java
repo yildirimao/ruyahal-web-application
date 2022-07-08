@@ -67,6 +67,7 @@ public class jdbcAppUser implements AppUserDao {
         appUser.setReligion(rs.getString("religion"));
         appUser.setEmail(rs.getString("email"));
         appUser.setEnabled(rs.getBoolean("enabled"));
+        appUser.setDream(rs.getString("dream"));
         return appUser;
     }
 }
