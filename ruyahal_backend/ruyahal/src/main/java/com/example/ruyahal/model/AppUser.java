@@ -7,7 +7,8 @@ public class AppUser {
     private int userId;
     private String name;
     private String lastname;
-    private int age;
+
+    private String dateOfBirth;
     private String gender;
     private String sexualOrientation;
     private String occupation;
@@ -59,12 +60,12 @@ public class AppUser {
         this.lastname = lastname;
     }
 
-    public int getAge() {
-        return age;
+    public String getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setAge(int age) {
-        this.age = age;
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getGender() {

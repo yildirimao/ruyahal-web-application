@@ -2,10 +2,7 @@ package com.example.ruyahal.controller;
 
 import com.example.ruyahal.dao.InterpreterDao;
 import com.example.ruyahal.model.Interpreter;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,7 +17,7 @@ public class InterpreterController {
         this.interpreterDao = interpreterDao;
     }
 
-    @RequestMapping(path = "/interpreter", method = RequestMethod.GET)
+    @RequestMapping(path = "/interpreters", method = RequestMethod.GET)
     public List<Interpreter> listAllInterpreters() {return interpreterDao.listAll();}
 
 

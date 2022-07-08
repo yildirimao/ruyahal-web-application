@@ -33,23 +33,14 @@ public class jdbcAppUser implements AppUserDao {
 
 
     @Override
-    public AppUser createAppUser(AppUser appUser) {
+    public void createAppUser(int id, String name, String lastName, String dateOfBirth, String gender, String sexualOrientation, String occupation, String maritalStatus, String zodiacSign, String religion, String email) {
 
-        String sql = "INSERT INTO users(user_name,  user_lastname, user_age, gender, sexual_orientation, user_occupation, marital_status, zodiac_sign, religion, email) " +
-                "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
-//                "RETURNING user_name, user_lastname, user_age, gender, sexual_orientation, user_occupation, marital_status, zodiac_sign, religion, email; ";
-        AppUser newAppUser = jdbctemplate.queryForObject(sql, AppUser.class,
-                appUser.getName(),
-                appUser.getLastname(),
-                appUser.getAge(),
-                appUser.getGender(),
-                appUser.getSexualOrientation(),
-                appUser.getOccupation(),
-                appUser.getMaritalStatus(),
-                appUser.getZodiacSign(),
-                appUser.getReligion(),
-                appUser.getEmail());
-        return newAppUser;
+        String sql = "INSERT INTO users(user_id, user_name,  user_lastname, user_age, gender, sexual_orientation, user_occupation, marital_status, zodiac_sign, religion, email) " +
+                "VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?) " +
+                "RETURNING user_name,  user_lastname, user_age, gender, sexual_orientation, user_occupation, marital_status, zodiac_sign, religion, email";
+        jdbctemplate.queryForObject(sql, int.class, name, lastName, age, gender, sexualOrientation, occupation, maritalStatus, zodiacSign, religion, email);
+
+
     }
 
     @Override
@@ -67,7 +58,7 @@ public class jdbcAppUser implements AppUserDao {
         appUser.setUserId(rs.getInt("user_id"));
         appUser.setName(rs.getString("user_name"));
         appUser.setLastname(rs.getString("user_lastname"));
-        appUser.setAge(rs.getInt("user_age"));
+        appUser.setDateOfBirth(rs.getString("date_of_birth"));
         appUser.setGender(rs.getString("gender"));
         appUser.setSexualOrientation(rs.getString("sexual_orientation"));
         appUser.setOccupation(rs.getString("user_occupation"));

@@ -8,7 +8,7 @@ public interface AppUserDao {
 
     List<AppUser> getAllUsers();
 
-    AppUser createAppUser(AppUser appUser);
+    void createAppUser(int id, String name, String lastName, String dateOfBirth, String gender, String sexualOrientation, String occupation, String maritalStatus, String zodiacSign, String religion, String email);
 
     void updateAppUser(int userId, String name, String lastname, int age, String gender, String sexualOrientation, String occupation, String maritalStatus, String zodiacSign, String religion, String email, boolean enabled);
 

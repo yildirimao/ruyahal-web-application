@@ -26,8 +26,8 @@ public class AppUserController {
 
 //    @ResponseStatus(code = HttpStatus.CREATED)
     @PostMapping("/users")
-    public AppUser createUser(@RequestBody AppUser appUser){
-        return appUserDao.createAppUser(appUser);
+    public void createUser(@RequestBody AppUser appUser){
+        appUserDao.createAppUser(appUser.getUserId(), appUser.getName() , appUser.getLastname(), appUser.getDateOfBirth(), appUser.getGender(), appUser.getSexualOrientation(), appUser.getOccupation(), appUser.getMaritalStatus(), appUser.getZodiacSign(), appUser.getReligion(), appUser.getEmail());
     }
 
 }
